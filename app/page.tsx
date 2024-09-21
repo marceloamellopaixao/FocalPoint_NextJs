@@ -1,19 +1,19 @@
 "use client";
+import "@/styles/home.css";
+import Image from "next/image";
+import Logo from "@/assets/logo.svg";
+import LogoDark from "@/assets/logoDark.svg";
+
 import { useState, useEffect } from "react";
 import { ModeToggle } from "@/components/ui/mode-toogle";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import Image from "next/image";
-import "@/styles/home.css";
-
-import Logo from "@/assets/logo.svg";
-import LogoDark from "@/assets/logoDark.svg";
+import { Checkbox } from "@/components/ui/checkbox";
 
 function useThemeLogo() {
   const [logo, setLogo] = useState(Logo);
@@ -54,10 +54,12 @@ export default function Home() {
       <Card>
         <CardHeader>
           <CardTitle>Suas tarefas de hoje</CardTitle>
-          <CardDescription>Card Description</CardDescription>
         </CardHeader>
         <CardContent>
-          
+          <div className="task flex items-center space-x-2">
+            <Checkbox id="1" className="checkbox-task"/>
+            <label htmlFor="1">Fazer um Café</label>
+          </div>
         </CardContent>
         <CardFooter>
           <p>Card Footer</p>
